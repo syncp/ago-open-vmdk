@@ -1037,7 +1037,9 @@ class OVF(object):
                 rasd_item = cl.from_dict(hw_config)
                 if type(hw_config) is dict:
                     rasd_item.configuration = hw_config.get('configuration', None)
-                rasd_item.required = hw_config.get('required', True)
+                    rasd_item.required = hw_config.get('required', True)
+                else:
+                    rasd_item.required = True
                 rasd_items[hw_id] = rasd_item
             except AttributeError:
                 print(f"no class {cl_name}")
