@@ -957,7 +957,8 @@ class OVF(object):
                                    units=hw.get('units', None),
                                    raw_image=hw.get('raw_image', None),
                                    disk_id=hw.get('disk_id', None),
-                                   file_id=hw.get('file_id', None))
+                                   file_id=hw.get('file_id', None),
+                                   capacity=hw.get('disk_capacity', None))
                     disks.append(disk)
                     files.append(disk.file)
                     hw['disk'] = disk
