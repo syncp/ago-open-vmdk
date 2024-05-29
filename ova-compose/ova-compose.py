@@ -591,8 +591,6 @@ class OVFDisk(object):
         else:
             assert False, "invalid units used"
         self.units = units
-        if capacity is None:
-            capacity = disk_info['capacity'] / self.allocation_factors[self.units]
         if raw_image is not None:
             if os.path.exists(raw_image):
                 # check if the vmdk exists, and if it does if it's newer than the raw image
@@ -604,6 +602,8 @@ class OVFDisk(object):
 
         self.file = OVFFile(path)
         disk_info = OVF._disk_info(path)
+        if capacity is None:
+            capacity = disk_info['capacity'] / self.allocation_factors[self.units]
         self.capacity = int(capacity)
         self.used = disk_info['used']
 
