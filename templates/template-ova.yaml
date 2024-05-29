@@ -1,0 +1,51 @@
+system:
+    name: SyncplicityStorageConnector_3.4.0.1
+    type: vmx-09
+    os_vmw: other4xLinux64Guest
+    firmware: efi
+
+networks:
+    vm_network:
+        name: "VM Network"
+        description: "The VM Network network"
+
+hardware:
+    cpus: 8
+    memory: 8192
+    scsi1:
+        type: scsi_controller
+    ide0:
+        type: ide_controller
+    ide1:
+        type: ide_controller
+    cdrom1:
+        type: cd_drive
+        parent: ide1
+    rootdisk:
+        type: hard_disk
+        parent: ide0
+        disk_image: SyncplicityStorageConnector_3.4.0.1-disk1.vmdk
+        units: GB
+        disk_capacity: 50
+    ethernet1:
+        type: ethernet
+        subtype: E1000E
+        network: vm_network
+    videocard1:
+        required: false
+        type: video_card
+
+extra_configs:
+    feature.enabled:
+        required: false
+        value: true
+        
+environment:
+    properties:
+
+product:
+    product: Syncplicity Storage Connector
+    vendor: Syncplicity
+
+eula:
+    file: SYNCPLICITY_LLC
