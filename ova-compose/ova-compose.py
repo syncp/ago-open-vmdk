@@ -1037,6 +1037,7 @@ class OVF(object):
                 rasd_item = cl.from_dict(hw_config)
                 if type(hw_config) is dict:
                     rasd_item.configuration = hw_config.get('configuration', None)
+                rasd_item.required = hw_config.get('required', True)
                 rasd_items[hw_id] = rasd_item
             except AttributeError:
                 print(f"no class {cl_name}")
@@ -1124,7 +1125,7 @@ class OVF(object):
 
         hw.append(self.vssd_system.xml_item("Virtual Hardware Family"))
         for hw_id, rasd_item in self.rasd_items.items():
-            xml_item = rasd_item.xml_item(True, hw_id)
+            xml_item = rasd_item.xml_item(rasd_item.required, hw_id)
             # sort rasd elements by tag:
             xml_item[:] = sorted(xml_item, key=lambda child: child.tag)
             hw.append(xml_item)
