@@ -47,5 +47,8 @@ product:
     product: Syncplicity Storage Connector
     vendor: Syncplicity
 
+annotation:
+    text: "The Syncplicity @syncpServiceDescription@ allows organizations to store, manage, and control all data in their Syncplicity Enterprise Edition account."
+
 eula:
     file: SYNCPLICITY_LLC
