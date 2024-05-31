@@ -1102,7 +1102,7 @@ class OVF(object):
         envelope.append(network_section)
 
         # VirtualSystem
-        virtual_system = ET.Element('{%s}VirtualSystem' % NS_OVF, { '{%s}id' % NS_OVF: 'vm' })
+        virtual_system = ET.Element('{%s}VirtualSystem' % NS_OVF, { '{%s}id' % NS_OVF: str(self.name) })
         virtual_system.append(xml_text_element('{%s}Info' % NS_OVF, "Virtual System"))
         envelope.append(virtual_system)
 
