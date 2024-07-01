@@ -46,7 +46,7 @@ environment:
 product:
     product: Syncplicity Storage Connector
     vendor: Syncplicity
-    version:
+    version: 1.0.1
 
 annotation:
     text: "The Syncplicity @syncpServiceDescription@ allows organizations to store, manage, and control all data in their Syncplicity Enterprise Edition account."
