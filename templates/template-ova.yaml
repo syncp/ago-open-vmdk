@@ -21,6 +21,12 @@ hardware:
     cdrom1:
         type: cd_drive
         parent: ide1
+    rootdisk:
+        type: hard_disk
+        parent: ide0
+        disk_image: SyncplicityStorageConnector_3.4.0.1-disk1.vmdk
+        units: GB
+        disk_capacity: 50
     ethernet1:
         type: ethernet
         subtype: E1000E
@@ -40,7 +46,7 @@ environment:
 product:
     product: Syncplicity Storage Connector
     vendor: Syncplicity
-    version: 1.0.1
+    version:
 
 annotation:
     text: "The Syncplicity @syncpServiceDescription@ allows organizations to store, manage, and control all data in their Syncplicity Enterprise Edition account."
